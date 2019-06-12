@@ -44,7 +44,7 @@ public class DatabaseProject {
 	// variables used for database connection
 	static String url = "jdbc:mysql://localhost:3306/weatherdb?useSSL=false";
 	static String user = "root";
-	static String password = "Lyf19871101";
+	static String password = "MYPASSWORD";
 	static Connection con;
 
 	// set up mysql time zone and clear the previous data in the tabel
@@ -70,9 +70,8 @@ public class DatabaseProject {
 	public static void doInput(String city, String state, int index) throws IOException, ParseException, SQLException {
 
 		URL location_url = new URL("https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "+" + state
-				+ "&key=AIzaSyBS2nF9cSwnLi4aVYyHcYcwJoW6l3yG6i4");
+				+ "&key=YOUR-API-KEY");
 
-		// https://maps.googleapis.com/maps/api/geocode/json?address=NewHaven+CT&key=AIzaSyBS2nF9cSwnLi4aVYyHcYcwJoW6l3yG6i4
 		URLConnection conn = location_url.openConnection();
 
 		// content of the resource/page
@@ -180,9 +179,8 @@ public class DatabaseProject {
 	public static void doOutput(String lat, String lng, int index) throws IOException, ParseException, SQLException {
 
 		// get data of current weather
-		// https://api.openweathermap.org/data/2.5/weather?lat=41.308274&lon=-72.9278835&APPID=5dd9a6a8292df45b90273c698a5929db
 		URL cunnrentWeather_url = new URL("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lng
-				+ "&APPID=5dd9a6a8292df45b90273c698a5929db");
+				+ "&APPID=YOUR-API-KEY");
 
 		URLConnection conn2 = cunnrentWeather_url.openConnection();
 
@@ -236,9 +234,8 @@ public class DatabaseProject {
 		out.close();
 
 		// get data of 5 days/3 hours forecast
-		// https://api.openweathermap.org/data/2.5/forecast?lat=41.308274&lon=-72.9278835&APPID=5dd9a6a8292df45b90273c698a5929db
 		URL fiveDaysWeather_url = new URL("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lng
-				+ "&APPID=5dd9a6a8292df45b90273c698a5929db");
+				+ "&APPID=YOUR-API-KEY");
 
 		URLConnection conn3 = fiveDaysWeather_url.openConnection();
 
