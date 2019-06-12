@@ -13,8 +13,8 @@ An end user should be able to interact with your application in the following wa
 *Note: 5 day / 3 hours forecast API is free (and this is good!). OpenWeather charges for all the other APIs providing historical data.
 
 <h3>Software Environment & Design Method</h3>
-1.Use a MySQL database to store weather forecast data
-2.Use the OpenWeather 5 day / 3 hour forecast APIs
+1.Use a MySQL database to store weather forecast data<br>
+2.Use the OpenWeather 5 day / 3 hour forecast APIs<br>
 3.OOD is used throughout the project development
 
 <h3>Structure</h3>
